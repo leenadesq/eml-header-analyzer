@@ -1,0 +1,25 @@
+Received: from out.example.com (out.example.com [192.0.2.10])
+	by mx.recipient.example.org (Postfix) with ESMTPS id ABCDEF;
+	Wed, 14 May 2025 10:15:33 +0000 (UTC)
+Received: from sender-laptop.local (sender-laptop.local [198.51.100.42])
+	by out.example.com (Postfix) with ESMTPSA id 123456;
+	Wed, 14 May 2025 10:15:30 +0000 (UTC)
+Authentication-Results: mx.recipient.example.org;
+	spf=pass smtp.mailfrom=alice@example.com;
+	dkim=pass header.d=example.com;
+	dmarc=pass header.from=example.com
+DKIM-Signature: v=1; a=rsa-sha256; d=example.com; s=selector1; t=1715680530;
+	bh=abcdef; h=From:To:Subject:Date; b=base64sig
+Message-ID: <20250514101530.ABCDEF@example.com>
+Date: Wed, 14 May 2025 10:15:30 +0000
+From: Alice Example <alice@example.com>
+To: Bob Recipient <bob@recipient.example.org>
+Subject: Test message for eml-header-analyzer
+X-Mailer: TestMailer 1.0
+X-Originating-IP: [198.51.100.42]
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+This is a synthetic test message used as a fixture for eml-header-analyzer.
+No real persons, domains, or IP addresses are referenced.
